@@ -1,0 +1,30 @@
+class Employee:
+    def __init__(self, firstname, lastname, gender):
+        self.first_name = firstname
+        self.last_name = lastname
+        self.gender = gender
+
+
+employee_list = [
+    Employee("Forouzan", "Naghdi", "female"),
+    Employee("Shahin", "Nasiri", "male"),
+    Employee("Armin", "Yaghoubi", "male"),
+    Employee("Samaneh", "Shahmohammadi", "female"),
+    Employee("Negar", "Mohammadi", "female")
+]
+
+selected_gender = input("Select Gender[male,female]: ")
+
+# for employee in employee_list:
+#     if employee.gender == selected_gender:
+#         print(f"{employee.first_name} {employee.last_name}")
+
+# def filter_function(emp):
+#     return emp.gender == selected_gender
+
+# employee_filter = filter(filter_function, employee_list)
+
+employee_filter = filter(lambda e: e.gender == selected_gender, employee_list)
+
+for emp in employee_filter:
+    print(emp.first_name, emp.last_name)
